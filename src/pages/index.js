@@ -2,9 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
-
-import Bio from '../components/Bio'
-import { rhythm } from '../utils/typography'
+import Img from 'gatsby-image'
 
 class BlogIndex extends React.Component {
   render() {
@@ -14,20 +12,29 @@ class BlogIndex extends React.Component {
     return (
       <div>
         <Helmet title={siteTitle} />
-        {videos.map(({ node }) => {
-          return (
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-              }}
-            >
-              <a href={`https://www.youtube.com/watch?v=${node.videoId}`}>
-                <img src={node.thumbnail.url} style={{ width: 320 }} />
-              </a>
-            </div>
-          )
-        })}
+          {videos.map(({ node }) => {
+            return (
+              <div
+                key={node.videoId}
+                style={{
+                  // maxW: 360,
+                  // flex: 1,
+
+                  display: 'flex',
+                  justifyContent: 'center',
+                }}
+              >
+                <a href={`https://www.youtube.com/watch?v=${node.videoId}`}>
+                  <Img
+                    resolutions={
+                      node.localThumbnail.childImageSharp.resolutions
+                    }
+                    // style={{ width: 360 }}
+                  />
+                </a>
+              </div>
+            )
+          })}
       </div>
     )
   }
@@ -53,6 +60,15 @@ export const pageQuery = graphql`
             url
             width
             height
+          }
+          localThumbnail {
+            id
+            childImageSharp {
+              id
+              resolutions {
+                ...GatsbyImageSharpResolutions
+              }
+            }
           }
         }
       }

@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Starter Blog',
-    author: 'Kyle Mathews',
-    description: 'A starter blog demonstrating what Gatsby can do.',
-    siteUrl: 'https://gatsbyjs.github.io/gatsby-starter-blog/',
+    title: 'Gucode',
+    author: 'Net and Pondd',
+    description: 'Awesome Youtube Channel',
+    siteUrl: 'https://gucodelive.github.io',
   },
-  pathPrefix: '/gatsby-starter-blog',
+  pathPrefix: '/',
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -41,7 +41,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `UA-121316446-1`,
       },
     },
     `gatsby-plugin-feed`,
@@ -68,7 +68,7 @@ module.exports = {
         short_name: "GuCode",
         start_url: "/",
         background_color: "#f7f0eb",
-        theme_color: "#a2466c",
+        theme_color: "#F8F458",
         display: "minimal-ui",
         icon: "src/logo.png", // This path is relative to the root of the site.
       },

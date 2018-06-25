@@ -31,9 +31,10 @@ class Template extends React.Component {
             </div>
           </Link>
           <p>ใครไม่โค้ด กูโค้ด</p>
+
           <a href="https://www.buymeacoffee.com/gucode" target="_blank">
             <img
-              src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png"
+              src="https://www.buymeacoffee.com/assets/img/custom_images/purple_img.png"
               alt="Buy Me A Coffee"
             />
           </a>
